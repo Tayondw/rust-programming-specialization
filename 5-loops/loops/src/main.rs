@@ -7,9 +7,9 @@ fn main() {
     // continue looping until x > 5
     loop {
         println!("x is {}", x);
-        x += 1;
+        x += 1; // shadowing, not let because x is still within the scope
         if x > 5 {
-            break;
+            break; // use when you want to stop the loop
         }
     }
 }
