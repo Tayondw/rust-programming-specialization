@@ -16,3 +16,4 @@ fn main() {
     // shadowing to a different type
     let health = if height < 180 { true } else { false };
 }
+
