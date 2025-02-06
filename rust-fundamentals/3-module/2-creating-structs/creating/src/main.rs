@@ -6,7 +6,7 @@ struct Person {
 }
 
 fn main() {
-    let tayon= Person {
+    let tayon = Person {
         first_name: "Tayon".to_string(),
         last_name: "Williams".to_string(),
         age: Some(23),
