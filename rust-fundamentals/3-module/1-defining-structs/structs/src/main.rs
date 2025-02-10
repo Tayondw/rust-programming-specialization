@@ -1,4 +1,4 @@
-#[derive(Debug)]
+#[derive(Debug)] // Derive the Debug trait to enable debug printing
 struct Person { //Struct definition - used to organize similar data in a structured way - similar to objects in other languages
     first_name: String,
     last_name: String,
