@@ -13,7 +13,7 @@ fn main() {
     let uri = String::from("https://example.com");
     let active = true;
 
-    let user = User { username, email, uri, active };
+    let user = User { username, email, uri, active }; // this only works when the variables declared above are the same as the fields in the struct
     let my_point = Point(10, 20, 30);
     println!("points: {}", my_point.0)
 }
