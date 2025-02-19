@@ -35,3 +35,44 @@ fn main() {
     let reversed = sentence.chars().rev().collect::<String>();
     println!("{}", reversed);
 }
+
+/*
+Challenge Questions:
+Modify the code to count the number of occurrences of each vowel (a, e, i, o, u) in the sentence. Print the count for each vowel individually.
+
+Extend the program by implementing a function that takes a sentence as input and returns the longest word in the sentence. Invoke this function with the `sentence` variable and print the longest word.
+*/
+
+fn main() {
+    let sentence = "the quick brown fox jumps over the lazy dog".to_string();
+
+    // Count occurrences of each vowel
+    let mut vowel_counts = std::collections::HashMap::new(); // use HashMap<char, i32> to store count of vowels
+    for c in sentence.chars() {
+        match c {
+            'a' | 'e' | 'i' | 'o' | 'u' => {
+                *vowel_counts.entry(c).or_insert(0) += 1; // initializes the a count if the vowel is not in the map
+            }
+            _ => {
+                continue;
+            }
+        }
+    }
+
+    // Print the vowel counts
+    for vowel in ['a', 'e', 'i', 'o', 'u'] {
+        println!("{}: {}", vowel, vowel_counts.get(&vowel).unwrap_or(&0)); // print the counts using this method to avoid None errors
+    }
+
+    // Find and print the longest word
+    let longest_word = find_longest_word(&sentence);
+    println!("Longest word: {}", longest_word);
+}
+
+// Function to find the longest word in a sentence
+fn find_longest_word(sentence: &str) -> &str {
+    sentence
+        .split_whitespace() // Split into words
+        .max_by_key(|word| word.len()) // Find the longest word - type of closure 
+        .unwrap_or("") // Default to empty if no words
+}
