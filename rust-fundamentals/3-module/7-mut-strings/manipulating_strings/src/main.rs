@@ -52,6 +52,7 @@ fn main() {
         match c {
             'a' | 'e' | 'i' | 'o' | 'u' => {
                 *vowel_counts.entry(c).or_insert(0) += 1; // initializes the a count if the vowel is not in the map
+                // the star is to dereference vowel counts once consumed or out of scope
             }
             _ => {
                 continue;
