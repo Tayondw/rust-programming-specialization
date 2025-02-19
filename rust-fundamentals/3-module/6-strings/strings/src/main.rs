@@ -22,3 +22,4 @@ fn main() {
     let mut salutation = String::from("hello");
     print_string(salutation);
 }
+// NOTE: string slice (&str) is known at compilation time, String type is not. &str is on stack, String type on heap
