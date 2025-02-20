@@ -1,9 +1,11 @@
 fn get_item(index: usize) {
-    //let index = 3; // this looks like an unsigned integer, but it's actually a usize because it's used to index into a vector
+    // if usize is used here, can pass index into .get and get_item in the main function, get passed into the value then used in get item
+
+    //     let index = 3; // this looks like an unsigned integer, but it's actually a usize because it's used to index into a vector
     let vec = vec![1, 2, 3, 4, 5];
 
     // Retrieve a value at a specific index
-    let value = vec.get(index).unwrap();
+    let value = vec.get(index).unwrap(); // will get Some(4) if do not use unwrap. use unwrap for error handling
 
     // print the value
     println!("The value at index {} is {:?}", index, value);
